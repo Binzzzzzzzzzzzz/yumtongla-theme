@@ -1,0 +1,122 @@
+<section class="hero-banner" style="background-color: {{ section.settings.bg_color }}">
+  <div class="hero-banner__content">
+    <p class="hero-banner__tagline">{{ section.settings.tagline }}</p>
+    <h1 class="hero-banner__title">{{ section.settings.title }}</h1>
+    <p class="hero-banner__subtitle">{{ section.settings.subtitle }}</p>
+    <a href="{{ section.settings.button_url }}" class="hero-banner__btn">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+</section>
+
+{% stylesheet %}
+  .hero-banner {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C41E3A' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-banner__content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero-banner__tagline {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C41E3A;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .hero-banner__title {
+    font-size: 3.5rem;
+    color: #2C1810;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .hero-banner__subtitle {
+    font-size: 1.2rem;
+    color: #6B4C3B;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .hero-banner__btn {
+    display: inline-block;
+    background: #C41E3A;
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+  }
+
+  .hero-banner__btn:hover {
+    background: #a01830;
+  }
+
+  @media (max-width: 768px) {
+    .hero-banner__title {
+      font-size: 2.2rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "多倫多 Toronto · 每日新鮮製造"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "飲湯啦 Yum Tong'La"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "重拾家的味道 · Delicious Healthy Chinese Soup · 老火湯"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "View This Month's Menu"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FFF8F0"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner"
+    }
+  ]
+}
+{% endschema %}
