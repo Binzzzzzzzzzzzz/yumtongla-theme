@@ -1,0 +1,197 @@
+<section class="about-us" style="background-color: {{ section.settings.bg_color }}">
+  <div class="about-us__inner">
+    <div class="about-us__image">
+      {% if section.settings.image %}
+        <img src="{{ section.settings.image | img_url: '600x' }}" alt="About Yum Tong'La">
+      {% else %}
+        <div class="about-us__image-placeholder">🍲</div>
+      {% endif %}
+    </div>
+
+    <div class="about-us__content">
+      <p class="about-us__label">{{ section.settings.label }}</p>
+      <h2 class="about-us__title">{{ section.settings.title }}</h2>
+      <div class="about-us__text">
+        <p>{{ section.settings.text1 }}</p>
+        <p>{{ section.settings.text2 }}</p>
+      </div>
+
+      <div class="about-us__badges">
+        {% for block in section.blocks %}
+          <div class="badge" {{ block.shopify_attributes }}>
+            <span class="badge__icon">{{ block.settings.icon }}</span>
+            <span class="badge__text">{{ block.settings.text }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .about-us {
+    padding: 80px 24px;
+  }
+
+  .about-us__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .about-us__image {
+    flex: 1;
+  }
+
+  .about-us__image img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(196, 30, 58, 0.15);
+  }
+
+  .about-us__image-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #FFF0F0;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+  }
+
+  .about-us__content {
+    flex: 1;
+  }
+
+  .about-us__label {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C41E3A;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .about-us__title {
+    font-size: 2.2rem;
+    color: #2C1810;
+    margin-bottom: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .about-us__text p {
+    color: #6B4C3B;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-size: 1rem;
+  }
+
+  .about-us__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFF0F0;
+    border: 1px solid #FFD0D0;
+    border-radius: 50px;
+    padding: 8px 16px;
+  }
+
+  .badge__icon {
+    font-size: 1.1rem;
+  }
+
+  .badge__text {
+    font-size: 0.85rem;
+    color: #C41E3A;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .about-us__inner {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .about-us__title {
+      font-size: 1.8rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "About Us",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Our Story · 我們的故事"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "重拾家的味道 · Taste of Home"
+    },
+    {
+      "type": "textarea",
+      "id": "text1",
+      "label": "Paragraph 1",
+      "default": "Yum Tong'La was born from a simple belief — that a good bowl of soup can bring you home, no matter where you are. Our soups are inspired by traditional Cantonese recipes passed down through generations."
+    },
+    {
+      "type": "textarea",
+      "id": "text2",
+      "label": "Paragraph 2",
+      "default": "Every soup is freshly made daily using quality ingredients, slow-cooked the traditional way. No shortcuts, no preservatives — just pure, nourishing goodness made with love in Toronto."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FFF8F0"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "✅"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Badge Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us"
+    }
+  ]
+}
+{% endschema %}

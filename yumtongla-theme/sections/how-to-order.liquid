@@ -1,0 +1,217 @@
+<section class="how-to-order" style="background-color: {{ section.settings.bg_color }}">
+  <div class="how-to-order__inner">
+    <div class="how-to-order__header">
+      <p class="how-to-order__label">{{ section.settings.label }}</p>
+      <h2 class="how-to-order__title">{{ section.settings.title }}</h2>
+      <p class="how-to-order__subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <div class="how-to-order__steps">
+      {% for block in section.blocks %}
+        <div class="step-card" {{ block.shopify_attributes }}>
+          <div class="step-card__number">{{ forloop.index }}</div>
+          <div class="step-card__icon">{{ block.settings.icon }}</div>
+          <h3 class="step-card__title">{{ block.settings.title }}</h3>
+          <p class="step-card__desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="how-to-order__note">
+      <p>{{ section.settings.note }}</p>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .how-to-order {
+    padding: 80px 24px;
+  }
+
+  .how-to-order__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .how-to-order__header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .how-to-order__label {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C41E3A;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .how-to-order__title {
+    font-size: 2.5rem;
+    color: #2C1810;
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+
+  .how-to-order__subtitle {
+    color: #6B4C3B;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .how-to-order__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .how-to-order__steps::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 16%;
+    right: 16%;
+    height: 2px;
+    background: linear-gradient(to right, #C41E3A, #F2A65A);
+    z-index: 0;
+  }
+
+  .step-card {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-card__number {
+    width: 56px;
+    height: 56px;
+    background: #C41E3A;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0 auto 16px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .step-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2C1810;
+    margin-bottom: 8px;
+  }
+
+  .step-card__desc {
+    font-size: 0.9rem;
+    color: #6B4C3B;
+    line-height: 1.6;
+  }
+
+  .how-to-order__note {
+    text-align: center;
+    background: #FFF0F0;
+    border: 1px solid #FFD0D0;
+    border-radius: 12px;
+    padding: 20px 32px;
+  }
+
+  .how-to-order__note p {
+    color: #C41E3A;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .how-to-order__steps {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .how-to-order__steps::before {
+      display: none;
+    }
+
+    .how-to-order__title {
+      font-size: 1.8rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "How to Order",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Simple & Easy"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "How to Order · 如何落單"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Ordering is simple — follow these 3 easy steps"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "📦 Free delivery on orders over $60 · 訂單滿$60免費送貨 · Delivery available in Toronto area"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "📱"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Step Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How to Order"
+    }
+  ]
+}
+{% endschema %}
