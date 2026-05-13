@@ -1,4 +1,4 @@
-<section class="monthly-menu" style="background-color: {{ section.settings.bg_color }}">
+<section class="monthly-menu" id="monthly-menu" style="background-color: {{ section.settings.bg_color }}">
   <div class="monthly-menu__inner">
     <div class="monthly-menu__header">
       <p class="monthly-menu__label">{{ section.settings.label }}</p>
@@ -20,7 +20,7 @@
 
     <div class="monthly-menu__cta">
       <p>{{ section.settings.order_note }}</p>
-      <a href="{{ section.settings.order_url }}" class="monthly-menu__btn">
+      <a href="https://www.instagram.com/yumtong1la" target="_blank" class="monthly-menu__btn">
         {{ section.settings.button_text }}
       </a>
     </div>
@@ -68,7 +68,7 @@
 
   .monthly-menu__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     margin-bottom: 48px;
   }

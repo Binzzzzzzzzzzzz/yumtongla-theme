@@ -1,40 +1,59 @@
 {
   "sections": {
+    "announcement": {
+      "type": "announcement-bar"
+    },
     "hero": {
       "type": "hero-banner"
     },
     "menu": {
       "type": "monthly-menu",
+      "settings": {
+        "label": "💐 May 2026 · 五月湯水系列",
+        "title": "May Menu 五月湯單",
+        "subtitle": "當天煲即日送貨，不是急凍湯包 · Freshly prepared daily, not frozen",
+        "order_note": "📦 $55 for 4 soups (32oz each, 3 servings) · Free delivery in Downtown Toronto, North York, Etobicoke & Mississauga",
+        "button_text": "Order Now · 立即落單"
+      },
       "blocks": {
         "soup1": {
           "type": "soup",
           "settings": {
-            "soup_name": "Lotus Root, Black Bean & Peanut Pork Rib Soup",
-            "soup_chinese": "蓮藕黑豆花生排骨湯",
-            "ingredients": "Lotus Root, Black Bean, Peanut, Pork Rib",
-            "price": "$15"
+            "soup_name": "Dried Winter Melon, Chinese Yam, Dried Octopus, Job's Tears, Fox Nuts & Adzuki Bean Pork Soup",
+            "soup_chinese": "冬瓜乾淮山章魚薏米茨實赤小豆豬展湯",
+            "ingredients": "清熱去濕、健脾補腎 · Clears heat, reduces dampness, supports digestion & kidneys",
+            "price": "$55 / 4 soups"
           }
         },
         "soup2": {
           "type": "soup",
           "settings": {
-            "soup_name": "Hericium Mushroom, Chinese Yam, Fox Nuts, Corn & Carrot Pork Soup",
-            "soup_chinese": "猴頭菇淮山茨實粟米紅蘿蔔豬展湯",
-            "ingredients": "Hericium Mushroom, Chinese Yam, Fox Nuts, Corn, Carrot, Pork",
-            "price": "$15"
+            "soup_name": "Chayote, Chestnut, Fig, Lotus Seed & Carrot Pork Soup",
+            "soup_chinese": "合掌瓜栗子無花果蓮子紅蘿蔔豬展湯",
+            "ingredients": "健脾養胃、潤肺止咳 · Strengthens digestion, nourishes lungs, boosts energy",
+            "price": "$55 / 4 soups"
           }
         },
         "soup3": {
           "type": "soup",
           "settings": {
-            "soup_name": "Dried Winter Melon, Chinese Yam, Dried Octopus & Adzuki Bean Pork Soup",
-            "soup_chinese": "冬瓜乾淮山章魚薏米茨實赤小豆豬展湯",
-            "ingredients": "Dried Winter Melon, Chinese Yam, Dried Octopus, Job's Tears, Fox Nuts, Adzuki Bean",
-            "price": "$15"
+            "soup_name": "Morel Mushroom, Chinese Yam, Corn, Carrot & Cashew Vegetarian Soup 🌱",
+            "soup_chinese": "羊肚菌淮山粟米紅蘿蔔腰果湯（素）",
+            "ingredients": "健脾益氣、增強免疫 · Boosts immunity, improves digestion; suitable for vegetarians",
+            "price": "$55 / 4 soups"
+          }
+        },
+        "soup4": {
+          "type": "soup",
+          "settings": {
+            "soup_name": "Five-Leaf Fig Root, Poria, Job's Tears, Corn & Carrot Chicken Soup",
+            "soup_chinese": "五指毛桃茯苓薏米粟米紅蘿蔔雞湯",
+            "ingredients": "健脾祛濕、補氣強身 · Reduces dampness, boosts energy, strengthens body",
+            "price": "$55 / 4 soups"
           }
         }
       },
-      "block_order": ["soup1", "soup2", "soup3"]
+      "block_order": ["soup1", "soup2", "soup3", "soup4"]
     },
     "how_to_order": {
       "type": "how-to-order",
@@ -99,7 +118,10 @@
         }
       },
       "block_order": ["badge1", "badge2", "badge3", "badge4"]
+    },
+    "footer": {
+      "type": "custom-footer"
     }
   },
-  "order": ["hero", "menu", "how_to_order", "about"]
+  "order": ["announcement", "hero", "menu", "how_to_order", "about", "footer"]
 }

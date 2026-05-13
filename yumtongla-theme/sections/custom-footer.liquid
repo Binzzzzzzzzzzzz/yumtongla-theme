@@ -1,0 +1,186 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <img src="{{ 'yumtongla_logo.jpg' | asset_url }}" alt="Yum Tong'La" class="site-footer__logo">
+      <h3 class="site-footer__name">飲湯啦 Yum Tong'La</h3>
+      <p class="site-footer__tagline">{{ section.settings.tagline }}</p>
+    </div>
+
+    <div class="site-footer__info">
+      <h4>Contact · 聯絡我們</h4>
+      <ul>
+        <li>📍 {{ section.settings.location }}</li>
+        <li>📱 <a href="https://www.instagram.com/{{ section.settings.instagram }}" target="_blank">@{{ section.settings.instagram }}</a></li>
+        <li>🕐 {{ section.settings.hours }}</li>
+      </ul>
+    </div>
+
+    <div class="site-footer__order">
+      <h4>Order · 落單</h4>
+      <p>{{ section.settings.order_info }}</p>
+      <a href="https://www.instagram.com/{{ section.settings.instagram }}" target="_blank" class="site-footer__btn">
+        DM us on Instagram
+      </a>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <p>© {{ 'now' | date: '%Y' }} 飲湯啦 Yum Tong'La · Toronto · Made with ❤️</p>
+  </div>
+</footer>
+
+{% stylesheet %}
+  .site-footer {
+    background-color: #2C1810;
+    color: #fff;
+    padding: 60px 24px 0;
+  }
+
+  .site-footer__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .site-footer__logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+  }
+
+  .site-footer__name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  .site-footer__tagline {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  .site-footer__info h4,
+  .site-footer__order h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #F2A65A;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .site-footer__info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .site-footer__info ul li {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .site-footer__info a {
+    color: #F2A65A;
+    text-decoration: none;
+  }
+
+  .site-footer__info a:hover {
+    text-decoration: underline;
+  }
+
+  .site-footer__order p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .site-footer__btn {
+    display: inline-block;
+    background: #C41E3A;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .site-footer__btn:hover {
+    background: #a01830;
+  }
+
+  .site-footer__bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .site-footer__bottom p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  @media (max-width: 768px) {
+    .site-footer__inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Custom Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "重拾家的味道 · Delicious Healthy Chinese Soup made fresh daily in Toronto."
+    },
+    {
+      "type": "text",
+      "id": "location",
+      "label": "Location",
+      "default": "Toronto, Ontario, Canada"
+    },
+    {
+      "type": "text",
+      "id": "instagram",
+      "label": "Instagram Handle",
+      "default": "yumtong1la"
+    },
+    {
+      "type": "text",
+      "id": "hours",
+      "label": "Hours",
+      "default": "Orders accepted Mon–Sat"
+    },
+    {
+      "type": "textarea",
+      "id": "order_info",
+      "label": "Order Info",
+      "default": "DM us on Instagram to place your order. Menu updated monthly. Delivery available in Toronto area."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Footer"
+    }
+  ]
+}
+{% endschema %}
