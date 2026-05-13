@@ -2,7 +2,40 @@
   "sections": {
     "hero": {
       "type": "hero-banner"
+    },
+    "menu": {
+      "type": "monthly-menu",
+      "blocks": {
+        "soup1": {
+          "type": "soup",
+          "settings": {
+            "soup_name": "Lotus Root, Black Bean & Peanut Pork Rib Soup",
+            "soup_chinese": "蓮藕黑豆花生排骨湯",
+            "ingredients": "Lotus Root, Black Bean, Peanut, Pork Rib",
+            "price": "$15"
+          }
+        },
+        "soup2": {
+          "type": "soup",
+          "settings": {
+            "soup_name": "Hericium Mushroom, Chinese Yam, Fox Nuts, Corn & Carrot Pork Soup",
+            "soup_chinese": "猴頭菇淮山茨實粟米紅蘿蔔豬展湯",
+            "ingredients": "Hericium Mushroom, Chinese Yam, Fox Nuts, Corn, Carrot, Pork",
+            "price": "$15"
+          }
+        },
+        "soup3": {
+          "type": "soup",
+          "settings": {
+            "soup_name": "Dried Winter Melon, Chinese Yam, Dried Octopus & Adzuki Bean Pork Soup",
+            "soup_chinese": "冬瓜乾淮山章魚薏米茨實赤小豆豬展湯",
+            "ingredients": "Dried Winter Melon, Chinese Yam, Dried Octopus, Job's Tears, Fox Nuts, Adzuki Bean",
+            "price": "$15"
+          }
+        }
+      },
+      "block_order": ["soup1", "soup2", "soup3"]
     }
   },
-  "order": ["hero"]
+  "order": ["hero", "menu"]
 }
