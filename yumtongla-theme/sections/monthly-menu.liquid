@@ -9,7 +9,11 @@
     <div class="monthly-menu__grid">
       {% for block in section.blocks %}
         <div class="menu-card" {{ block.shopify_attributes }}>
-          <div class="menu-card__icon">🍲</div>
+          {% assign soup_images = 'soup1-winter-melon.jpg,soup2-chayote-chestnut.jpg,soup3-morel-mushroom.jpg,soup4-five-leaf-fig.jpg' | split: ',' %}
+{% assign img = soup_images[forloop.index0] %}
+<div class="menu-card__image">
+  <img src="{{ img | asset_url }}" alt="{{ block.settings.soup_name }}">
+</div>
           <h3 class="menu-card__name">{{ block.settings.soup_name }}</h3>
           <p class="menu-card__chinese">{{ block.settings.soup_chinese }}</p>
           <p class="menu-card__ingredients">{{ block.settings.ingredients }}</p>
@@ -146,6 +150,21 @@
     background: #a01830;
   }
 
+  .menu-card__image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    margin: -28px -24px 16px;
+    width: calc(100% + 48px);
+  }
+
+  .menu-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   @media (max-width: 900px) {
     .monthly-menu__grid {
       grid-template-columns: repeat(2, 1fr);
@@ -214,6 +233,11 @@
       "type": "soup",
       "name": "Soup Item",
       "settings": [
+        {          
+          "type": "text",
+          "id": "image",
+          "label": "Image filename (from assets)"
+        },
         {
           "type": "text",
           "id": "soup_name",

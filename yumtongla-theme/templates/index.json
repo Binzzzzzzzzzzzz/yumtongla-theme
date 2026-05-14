@@ -19,6 +19,7 @@
         "soup1": {
           "type": "soup",
           "settings": {
+            "image": "soup1-winter-melon.jpg",
             "soup_name": "Dried Winter Melon, Chinese Yam, Dried Octopus, Job's Tears, Fox Nuts & Adzuki Bean Pork Soup",
             "soup_chinese": "冬瓜乾淮山章魚薏米茨實赤小豆豬展湯",
             "ingredients": "清熱去濕、健脾補腎 · Clears heat, reduces dampness, supports digestion & kidneys",
@@ -28,6 +29,7 @@
         "soup2": {
           "type": "soup",
           "settings": {
+            "image": "soup2-chayote-chestnut.jpg",
             "soup_name": "Chayote, Chestnut, Fig, Lotus Seed & Carrot Pork Soup",
             "soup_chinese": "合掌瓜栗子無花果蓮子紅蘿蔔豬展湯",
             "ingredients": "健脾養胃、潤肺止咳 · Strengthens digestion, nourishes lungs, boosts energy",
@@ -37,6 +39,7 @@
         "soup3": {
           "type": "soup",
           "settings": {
+            "image": "soup3-morel-mushroom.jpg",
             "soup_name": "Morel Mushroom, Chinese Yam, Corn, Carrot & Cashew Vegetarian Soup 🌱",
             "soup_chinese": "羊肚菌淮山粟米紅蘿蔔腰果湯（素）",
             "ingredients": "健脾益氣、增強免疫 · Boosts immunity, improves digestion; suitable for vegetarians",
@@ -46,6 +49,7 @@
         "soup4": {
           "type": "soup",
           "settings": {
+            "image": "soup4-five-leaf-fig.jpg",
             "soup_name": "Five-Leaf Fig Root, Poria, Job's Tears, Corn & Carrot Chicken Soup",
             "soup_chinese": "五指毛桃茯苓薏米粟米紅蘿蔔雞湯",
             "ingredients": "健脾祛濕、補氣強身 · Reduces dampness, boosts energy, strengthens body",
